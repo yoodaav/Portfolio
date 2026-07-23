@@ -24,7 +24,7 @@ const skillGroups = [
   }
 ];
 
-const categories = ["Tous", "Python & ML", "Power BI", "SQL & Data"];
+const categories = ["Tous", "Python", "Python & ML", "Power BI", "SQL & Data", "Tableau"];
 
 const projects = [
   {
@@ -127,6 +127,55 @@ const projects = [
     ],
     tags: ["Python", "K-Means", "Clustering", "Non supervisé"],
     github: GITHUB_BASE
+  },
+  {
+    id: "basevente",
+    title: "Analyse exploratoire de données — BaseVente",
+    category: "Python",
+    metric: "EDA · Python · Visualisation",
+    shortDesc: "Nettoyage, exploration et visualisation des ventes pour identifier les produits et tendances les plus performants.",
+    description: "Projet académique dédié à l'analyse exploratoire d'un jeu de données de ventes. Il couvre le nettoyage des données, la visualisation des tendances par région et par commercial, ainsi que l'identification des produits les plus vendus.",
+    points: [
+      "Nettoyage et préparation des données de ventes",
+      "Exploration visuelle des tendances par région",
+      "Analyse des performances par commercial",
+      "Identification des produits les plus vendus"
+    ],
+    tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "EDA"],
+    github: GITHUB_BASE
+  },
+  {
+    id: "mysql-ventes",
+    title: "Exploration de bases de données relationnelles — MySQL",
+    category: "SQL & Data",
+    metric: "Requêtes avancées · MySQL",
+    shortDesc: "Analyse de ventes 2021–2023, classements produits, meilleurs commerciaux et vues filtrées.",
+    description: "Projet académique autour d'une base relationnelle MySQL. Il met en œuvre des requêtes avancées pour analyser les ventes 2021–2023, classer les produits, identifier les meilleurs commerciaux par chiffre d'affaires et créer des vues filtrées.",
+    points: [
+      "Requêtes avancées sur les ventes 2021-2023",
+      "Classements des produits par performance",
+      "Identification des meilleurs commerciaux par chiffre d'affaires",
+      "Création de vues filtrées pour les produits au prix supérieur à 500",
+      "Analyse des clients inactifs et des produits vendus en 2023"
+    ],
+    tags: ["SQL", "MySQL", "Requêtes avancées", "Vues"],
+    github: GITHUB_BASE
+  },
+  {
+    id: "kinmarche",
+    title: "Dashboard dynamique des ventes — KinMarché",
+    category: "Power BI",
+    metric: "Power BI · KPI commerciaux",
+    shortDesc: "Dashboard interactif de suivi des ventes et des indicateurs commerciaux par produit, région, ville et détaillant.",
+    description: "Projet personnel de business intelligence basé sur Power BI. Le dashboard combine un nettoyage de données via Power Query avec des vues interactives permettant de suivre les KPI commerciaux et d'analyser les performances par produit, région, ville et détaillant.",
+    points: [
+      "Nettoyage des données avec Power Query",
+      "Tableau de bord interactif pour le suivi des KPI commerciaux",
+      "Analyse des tendances par produit",
+      "Analyse des tendances par région, ville et détaillant"
+    ],
+    tags: ["Power BI", "Power Query", "DAX", "Dashboard"],
+    github: GITHUB_BASE
   }
 ];
 
@@ -185,17 +234,24 @@ categories.forEach(cat => {
 /* ================= RENDER: PROJECTS ================= */
 const projectGrid = document.getElementById("projectGrid");
 
+function getProjectCategories(project) {
+  return Array.isArray(project.category) ? project.category : [project.category];
+}
+
 function renderProjects() {
   projectGrid.innerHTML = "";
-  const list = activeCategory === "Tous" ? projects : projects.filter(p => p.category === activeCategory);
+  const list = activeCategory === "Tous"
+    ? projects
+    : projects.filter(project => getProjectCategories(project).includes(activeCategory));
 
   list.forEach((project, i) => {
     const card = document.createElement("article");
     card.className = "project-card";
     card.style.animationDelay = `${i * 0.05}s`;
+    const categoryLabel = getProjectCategories(project).join(" · ");
     card.innerHTML = `
       <div class="card-top">
-        <span class="card-category">${project.category}</span>
+        <span class="card-category">${categoryLabel}</span>
       </div>
       <div>
         <h3 class="card-title">${project.title}</h3>
