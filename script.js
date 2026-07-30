@@ -64,6 +64,23 @@ const projects = [
     github: GITHUB_BASE
   },
   {
+    id: "dbt-duckdb",
+    title: "Projet dbt + DuckDB",
+    category: "SQL & Data",
+    metric: "Pipeline analytique · dbt + DuckDB",
+    shortDesc: "Pipeline analytique moderne pour transformer des données de taxi en données propres et prêtes à l'analyse.",
+    description: "Ce projet met en place un pipeline analytique basé sur dbt et DuckDB pour transformer des données brutes de taxi en un jeu de données propre, fiable et prêt à l'analyse.",
+    points: [
+      "Ingestion des données sources issues de fichiers Parquet",
+      "Nettoyage et filtrage des enregistrements incohérents",
+      "Standardisation des valeurs métier pour harmoniser les données",
+      "Calcul d'indicateurs comme la durée du trajet et le mode de paiement",
+      "Production d'un modèle transformé exploitable pour l'analyse"
+    ],
+    tags: ["SQL", "dbt", "DuckDB", "YAML"],
+    github: GITHUB_BASE
+  },
+  {
     id: "bigmart",
     title: "BigMart Sales",
     category: ["Python", "Power BI"],

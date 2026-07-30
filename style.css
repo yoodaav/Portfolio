@@ -4,8 +4,8 @@
   --ink-2: #0F2237;
   --card: #132C46;
   --card-line: #24445F;
-  --paper: #F5F7F8;
-  --paper-2: #ECEFF1;
+  --paper: #F4EEE8;
+  --paper-2: #EDE3D8;
   --gold: #16B8B0;
   --gold-dim: #129089;
   --teal: #16B8B0;
@@ -312,12 +312,13 @@ img {
   max-width: 560px;
   margin: 0 auto 34px;
 }
+
 .hero .role {
-      font-size: 19px;
-      color: #cfe3e3;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
+  font-size: 19px;
+  color: #cfe3e3;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
 
 .hero-actions {
   display: flex;
@@ -384,15 +385,86 @@ img {
 
 /* Profile photo placeholder — signature hero element */
 .profile-photo {
-  width: 132px;
-  height: 132px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   margin: 0 auto 28px;
   position: relative;
   overflow: hidden;
   border: 3px solid var(--teal-bright);
-  box-shadow: 0 0 0 6px rgba(22, 184, 176, .12), 0 20px 40px -14px rgba(0, 0, 0, .6);
+  box-shadow: 0 0 0 8px rgba(22, 184, 176, .14), 0 20px 42px -14px rgba(0, 0, 0, .65);
   background: linear-gradient(160deg, #16324D, #0D2036);
+  animation: profileFloat 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.profile-photo::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(61, 214, 206, .72);
+  box-shadow: 0 0 0 8px rgba(61, 214, 206, .08);
+  animation: profileGlow 3.2s ease-in-out infinite;
+  z-index: 0;
+}
+
+.profile-photo::after {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  border: 1px solid rgba(61, 214, 206, .28);
+  animation: profilePulse 2.8s ease-out infinite;
+  z-index: 0;
+}
+
+.profile-photo>* {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes profileFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.03);
+  }
+}
+
+@keyframes profileGlow {
+
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: .75;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes profilePulse {
+  0% {
+    transform: scale(0.95);
+    opacity: .7;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: .35;
+  }
+
+  100% {
+    transform: scale(1.12);
+    opacity: 0;
+  }
 }
 
 .photo-label {
@@ -403,9 +475,10 @@ img {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  cursor: pointer;
+  cursor: default;
   color: var(--text-dim);
   transition: color .2s, background .2s;
+  pointer-events: none;
 }
 
 .photo-label:hover {
