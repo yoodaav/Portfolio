@@ -410,3 +410,36 @@ function observeReveal() {
 }
 // run after initial render
 setTimeout(observeReveal, 0);
+
+/* ================= HERO: typing effect for role ================= */
+const roles = ["Analytics Engineer", "Data Scientist junior", "Data Analyst junior"];
+const typedEl = document.getElementById("typed");
+const cursorEl = document.querySelector(".cursor");
+
+function sleep(ms) { return new Promise(res => setTimeout(res, ms)); }
+
+async function typeRolesLoop() {
+  if (!typedEl) return;
+  let idx = 0;
+  while (true) {
+    const word = roles[idx];
+    // type
+    for (let i = 0; i <= word.length; i++) {
+      typedEl.textContent = word.slice(0, i);
+      await sleep(80);
+    }
+    await sleep(1200);
+    // erase
+    for (let i = word.length; i >= 0; i--) {
+      typedEl.textContent = word.slice(0, i);
+      await sleep(45);
+    }
+    await sleep(260);
+    idx = (idx + 1) % roles.length;
+  }
+}
+
+window.addEventListener('load', () => {
+  // start typing loop
+  typeRolesLoop();
+});
