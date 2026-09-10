@@ -4,7 +4,7 @@ const GITHUB_BASE = "https://github.com/yoodaav";
 const skillGroups = [
   {
     label: "Langages & Bases de données",
-    tags: ["Python (NumPy, Pandas, PySpark)", "R", "SQL (MySQL, PostgreSQL)", "MongoDB"]
+    tags: ["Python (NumPy, Pandas, PySpark)", "R", "SQL", "MongoDB"]
   },
   {
     label: "Statistiques & Machine Learning",
@@ -15,16 +15,27 @@ const skillGroups = [
     tags: ["Power BI (DAX, Dashboards)", "Tableau Public", "Matplotlib", "Seaborn", "ggplot2"]
   },
   {
-    label: "Data Cleaning",
-    tags: ["Pandas", "Power Query"]
+    label: "Data Cleaning and Tranformation",
+    tags: ["Pandas", "Pyspark", "dbt(Data Build Tool )", "Power Query"]
   },
+
+  {
+    label: "Analytics Engineering",
+    tags: ["dbt + Duckdb", "dbt + PostgreSQL", "dbt + Snowflake"]
+  },
+
+  {
+    label: "Cloud Data Engineering",
+    tags: ["ETL / ELT", "AWS (S3,Glue,Lamda , Redshift & Athena)", "AZURE (Azure Cloud Storage,Azure Data Factory, Synapse Analytic)", "Google Cloud Platform (google cloud storage,Bigquery)"]
+  },
+
   {
     label: "Outils",
-    tags: ["VS Code", "Google Colab", "Anaconda", "Google Cloud Platform", "Excel (TCD, Power Pivot)", "STATA", "SPSS"]
+    tags: ["VS Code", "Google Colab", "Anaconda", "MySQL", "PostgeSQL", "SQL Server", "Snowflake", "Duckdb", "Rstudio", "Office365 ", "SPSS"]
   }
 ];
 
-const categories = ["Tous", "Python", "Python & ML", "Power BI", "SQL & Data", "Tableau"];
+const categories = ["Tous", "Python", "Python & ML", "Power BI", "SQL", "Tableau", "dbt"];
 
 const projects = [
   {
@@ -47,7 +58,7 @@ const projects = [
   {
     id: "pizza",
     title: "Pizza Sales",
-    category: ["SQL & Data", "Power BI"],
+    category: ["SQL", "Power BI"],
     metric: "Requêtes analytiques · DuckDB + Power BI",
     shortDesc: "Manipulation et exploration de données de ventes via DuckDB, SQL et Power BI.",
     description: "Manipulation et exploration de données de ventes de pizzas avec DuckDB et JupySQL : connexion à la base, création de la table à partir d'un fichier CSV, puis une série d'analyses de revenu, de volume et de saisonnalité restituées ensuite dans Power BI.",
@@ -66,7 +77,7 @@ const projects = [
   {
     id: "dbt-duckdb",
     title: "Projet dbt + DuckDB",
-    category: "SQL & Data",
+    category: ["SQL", "dbt"],
     metric: "Pipeline analytique · dbt + DuckDB",
     shortDesc: "Pipeline analytique moderne pour transformer des données de taxi en données propres et prêtes à l'analyse.",
     description: "Ce projet met en place un pipeline analytique basé sur dbt et DuckDB pour transformer des données brutes de taxi en un jeu de données propre, fiable et prêt à l'analyse.",
@@ -164,7 +175,7 @@ const projects = [
   {
     id: "mysql-ventes",
     title: "Exploration de bases de données relationnelles — MySQL",
-    category: "SQL & Data",
+    category: "SQL",
     metric: "Requêtes avancées · MySQL",
     shortDesc: "Analyse de ventes 2021–2023, classements produits, meilleurs commerciaux et vues filtrées.",
     description: "Projet académique autour d'une base relationnelle MySQL. Il met en œuvre des requêtes avancées pour analyser les ventes 2021–2023, classer les produits, identifier les meilleurs commerciaux par chiffre d'affaires et créer des vues filtrées.",
@@ -175,7 +186,7 @@ const projects = [
       "Création de vues filtrées pour les produits au prix supérieur à 500",
       "Analyse des clients inactifs et des produits vendus en 2023"
     ],
-    tags: ["SQL", "MySQL", "Requêtes avancées", "Vues"],
+    tags: ["SQL", "MySQL", "Requêtes avancées"],
     github: GITHUB_BASE
   },
   {
@@ -193,6 +204,25 @@ const projects = [
     ],
     tags: ["Power BI", "Power Query", "DAX", "Dashboard"],
     github: GITHUB_BASE
+  }
+  ,
+  {
+    id: "uci-credit-card",
+    title: "UCI Credit Card — Défaut de paiement",
+    category: ["Python & ML"],
+    metric: "Nettoyage, EDA & Apprentissage supervisé",
+    shortDesc: "Nettoyage, EDA et modélisation (LightGBM) du jeu UCI Credit Card pour prédire le défaut de paiement.",
+    description: "Projet en deux notebooks : nettoyage/EDA puis modélisation. Prépare le jeu (filtrage des catégories invalides, recodage, EDA) et compare plusieurs modèles avant de retenir et sauvegarder un LightGBM optimisé.",
+    points: [
+      "Chargement et inspection du jeu brut `UCI_Credit_Card.csv`",
+      "Nettoyage des catégories invalides et recodage (`EDUCATION`, `MARRIAGE`, `SEX`, `PAY_*`)",
+      "Analyse exploratoire : distributions, heatmaps",
+      "Séparation train/test stratifiée et comparaison de modèles (Logistic, RF, AdaBoost, XGBoost, LightGBM)",
+      "Gestion du déséquilibre (RandomUnderSampler, SMOTE) et optimisation hyperparamètres",
+      "Modèle final retenu : LightGBM optimisé, sauvergardé comme `best_lightgbm_model.pkl`, avec 78,2% d'accuracy en test (contre 83,7% en entraînement) — un écart de 5,5% témoignant d'un sur-apprentissage léger et sous contrôle.)"
+    ],
+    tags: ["Python", "Pandas", "Scikit-Learn", "LightGBM", "SMOTE", "EDA"],
+    github: "https://github.com/yoodaav/Prediction_Defaut_de_Paiement"
   }
 ];
 
