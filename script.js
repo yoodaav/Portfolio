@@ -53,7 +53,7 @@ const projects = [
       "Calcul du prix total par pathologie de l'hôpital"
     ],
     tags: ["Python", "Pandas", "Feature Engineering", "EDA"],
-    github: GITHUB_BASE
+    github: "https://github.com/yoodaav/Healthcare_Analyse"
   },
   {
     id: "pizza",
@@ -72,7 +72,7 @@ const projects = [
       "Calcul du revenu total au deuxième semestre 2022"
     ],
     tags: ["SQL", "DuckDB", "JupySQL", "Power BI"],
-    github: GITHUB_BASE
+    github: "https://github.com/yoodaav/Analyse__PizzaSales"
   },
   {
     id: "dbt-duckdb",
@@ -107,7 +107,7 @@ const projects = [
       "Dashboard dynamique Power BI (KPIs : Total Sales, AVG Sales, Item Count)"
     ],
     tags: ["Python", "Power BI", "EDA", "Data Cleaning"],
-    github: GITHUB_BASE
+    github: "https://github.com/yoodaav/Analyse-du-Dataset-Bigmart"
   },
   {
     id: "rh",
@@ -170,7 +170,7 @@ const projects = [
       "Identification des produits les plus vendus"
     ],
     tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "EDA"],
-    github: GITHUB_BASE
+    github: "https://github.com/yoodaav/Analyse_BaseVente"
   },
   {
     id: "mysql-ventes",
@@ -187,7 +187,7 @@ const projects = [
       "Analyse des clients inactifs et des produits vendus en 2023"
     ],
     tags: ["SQL", "MySQL", "Requêtes avancées"],
-    github: GITHUB_BASE
+    github: "https://github.com/yoodaav/Analyse_de_donn-es_relationnelles_avec_MySQL"
   },
   {
     id: "kinmarche",
@@ -203,7 +203,7 @@ const projects = [
       "Analyse des tendances par région, ville et détaillant"
     ],
     tags: ["Power BI", "Power Query", "DAX", "Dashboard"],
-    github: GITHUB_BASE
+    github: "https://github.com/yoodaav/Analyses_KinMarche"
   }
   ,
   {
