@@ -228,18 +228,28 @@ const projects = [
 
 const timelineData = [
   {
-    year: "2025",
-    title: "Certificate — Data Science",
+    year: "Novembre 2025",
+    title: "Certificat — Data Science",
     sub: "Statistics Of Home"
   },
   {
-    year: "2025",
-    title: "Certificate — Statistiques et Probabilités",
+    year: "Septembre 2025",
+    title: "Certificat — Cloud & Big Data pour l'Analyse de Données",
     sub: "Eureka Services"
   },
   {
-    year: "2025",
-    title: "Certificate — Python, SQL, Excel, Power BI, Tableau, SPSS",
+    year: "Mars - Octobre 2025",
+    title: "Certificat — Intelligence Artificielle et Analyse de Données",
+    sub: "Fitech Live"
+  },
+  {
+    year: "Mars - Juin 2025",
+    title: "Certificat — Python, SQL, Excel, Power BI, Tableau, SPSS",
+    sub: "Eureka Services"
+  },
+  {
+    year: "Mars 2025",
+    title: "Certificat — Statistiques et Probabilités",
     sub: "Eureka Services"
   },
   {
